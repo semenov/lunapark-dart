@@ -1,0 +1,5 @@
+name: lunapark
+dependencies:
+  start: any
+  mongo_dart: any
+  route: any
