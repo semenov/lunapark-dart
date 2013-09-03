@@ -1,18 +1,27 @@
 part of components;
 
-class TicketPreviewComponent extends Component {
+class TicketPreviewComponent extends BoxComponent {
   Ticket ticket;
-  TicketTitleComponent title;
-  TicketDescriptionComponent description;
+  TextComponent title;
+  TextComponent description;
+  StatusComponent status;
 
-  TicketPreviewComponent(Ticket ticket) {
+  TicketPreviewComponent(Ticket ticket) : super.horizontal() {
     this.ticket = ticket;
-    title = new TicketTitleComponent();
-    title.text = ticket.title;
-    description = new TicketDescriptionComponent();
-    description.text = ticket.description;
-    addChild(title);
-    addChild(description);
+
+    status = new StatusComponent();
+    status.status = ticket.status;
+
+    title = new TextComponent(name: 'title', text: ticket.title);
+    description = new TextComponent(name: 'description', text: ticket.description);
+
+    var verticalBox = new BoxComponent.vertical();
+    verticalBox.addChild(title);
+    verticalBox.addChild(description);
+
+    addChild(status);
+    addChild(verticalBox);
+
 
     element.onClick.listen((e) {
       actions.showTicket(ticket);

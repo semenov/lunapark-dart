@@ -13,9 +13,5 @@ class TicketComponent extends Component {
     description.text = ticket.description;
     addChild(title);
     addChild(description);
-
-    element.onClick.listen((e) {
-      actions.showTicket(ticket);
-    });
   }
 }

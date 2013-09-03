@@ -2,11 +2,12 @@ part of components;
 
 class ButtonComponent extends Component {
   String tag = 'button';
+  Function onClick;
 
   ButtonComponent() {
     label = 'Сохранить';
     element.onClick.listen((e) {
-      label = this.runtimeType.toString() + 'Clicked';
+      onClick();
     });
   }
 

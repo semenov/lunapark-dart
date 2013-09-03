@@ -1,6 +1,8 @@
 part of components;
 
 class SurfaceComponent extends Component {
+  String _title;
+
   SurfaceComponent() {
   }
 

@@ -13,7 +13,11 @@ body, button, input {
 }
 
 .HeaderComponent {
-  font-size: 30px;
+  font-size: 28px;
+}
+
+.ActionsComponent {
+  padding: 10px 0;
 }
 
 .ButtonComponent {
@@ -25,6 +29,7 @@ body, button, input {
   font-weight: normal;
   font-size: 14px;
   -webkit-transition: background-color .3s;
+  cursor: pointer;
 }
 
 .ButtonComponent:hover {
@@ -38,12 +43,19 @@ body, button, input {
 .TicketPreviewComponent {
   margin: 0 -15px;
   padding: 15px;
-  -webkit-transition: all .2s;
 }
 
 .TicketPreviewComponent:hover {
   background-color: #fefbed;
   cursor: pointer;
+}
+
+.TicketPreviewComponent .title {
+  font-size: 18px;
+}
+
+.TicketPreviewComponent .description {
+  color: #666;
 }
 
 .TicketComponent {
@@ -56,4 +68,10 @@ body, button, input {
 
 .TicketDescriptionComponent {
   color: #666;
+}
+
+.StatusComponent {
+  width: 24px;
+  height: 24px;
+  margin: 3px 16px 0 0;
 }
