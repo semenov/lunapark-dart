@@ -4,44 +4,56 @@ packages:
   args:
     description: args
     source: hosted
-    version: "0.5.13"
+    version: "0.8.7"
   browser:
     description: browser
     source: hosted
-    version: "0.5.13"
+    version: "0.8.7"
   bson:
     description: bson
     source: hosted
-    version: "0.1.7"
+    version: "0.1.14"
   crypto:
     description: crypto
     source: hosted
-    version: "0.5.13"
+    version: "0.8.7"
+  http_server:
+    description: http_server
+    source: hosted
+    version: "0.8.7"
+  json:
+    description: json
+    source: hosted
+    version: "0.8.7"
   logging:
     description: logging
     source: hosted
-    version: "0.5.13"
+    version: "0.8.7"
   meta:
     description: meta
     source: hosted
-    version: "0.5.13"
+    version: "0.8.7"
+  mime:
+    description: mime
+    source: hosted
+    version: "0.8.7"
   mongo_dart:
     description: mongo_dart
     source: hosted
-    version: "0.1.23"
+    version: "0.1.32"
   mongo_dart_query:
     description: mongo_dart_query
     source: hosted
-    version: "0.1.8"
+    version: "0.1.10"
+  path:
+    description: path
+    source: hosted
+    version: "0.8.7"
   route:
     description: route
     source: hosted
     version: "0.4.5+1"
-  start:
-    description: start
+  unmodifiable_collection:
+    description: unmodifiable_collection
     source: hosted
-    version: "0.0.8"
-  unittest:
-    description: unittest
-    source: hosted
-    version: "0.5.13"
+    version: "0.8.7"

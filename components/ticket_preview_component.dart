@@ -7,6 +7,7 @@ class TicketPreviewComponent extends BoxComponent {
   StatusComponent status;
 
   TicketPreviewComponent(Ticket ticket) : super.horizontal() {
+    semantic = true;
     this.ticket = ticket;
 
     status = new StatusComponent();

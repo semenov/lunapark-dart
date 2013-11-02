@@ -1,14 +1,14 @@
 library actions;
 
 import 'dart:html';
+import 'api.dart' as api;
 import 'dart:async';
 import 'components/components.dart';
-import 'dart:json' as json;
 import 'models/models.dart';
 
 PageComponent page;
 
-_processUrl(String url) {
+void _processUrl(String url) {
   if (url == '/') {
     mainAction();
   } else if (url == '/tickets/new') {
@@ -16,52 +16,40 @@ _processUrl(String url) {
   }
 }
 
-_setUrl(String url) {
+void _setUrl(String url) {
   if (window.location.pathname == url) return;
   print('pushing url ' + url);
   window.history.pushState(null, '', url);
 }
 
-Future _get(String url) {
-  var completer = new Completer();
-  HttpRequest.request('/api/' + url).then((request) {
-    var response = request.responseText;
-    var result = json.parse(response);
-    completer.complete(result);
-  });
 
-  return completer.future;
-}
 
-init() {
+void init() {
   page.header.title = 'Боевые квадрокоптеры';
   window.onPopState.listen((e) => _processUrl(window.location.pathname));
 }
 
-mainAction() {
+void mainAction() {
   showTicketsList();
 }
 
-showTicketsList() {
+void showTicketsList() {
   _setUrl('/');
-  _get('tickets/list').then((tickets) {
+  api.getTicketList().then((tickets) {
     var ticketListComponent = new TicketListComponent();
 
-    tickets.forEach((ticketData) {
-        ticketListComponent.add(new Ticket(ticketData));
-    });
+    tickets.forEach(ticketListComponent.add);
 
     page.surface.contentComponent = ticketListComponent;
   });
 }
 
-showTicket(Ticket ticket) {
+void showTicket(Ticket ticket) {
   _setUrl('/ticket');
   page.surface.contentComponent = new TicketComponent(ticket);
 }
 
-newTicket() {
+void newTicket() {
   _setUrl('/tickets/new');
-  print('Need to make new ticket component');
   page.surface.contentComponent = new TicketEditComponent();
 }

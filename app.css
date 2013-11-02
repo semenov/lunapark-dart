@@ -30,6 +30,7 @@ body, button, input {
   font-size: 14px;
   -webkit-transition: background-color .3s;
   cursor: pointer;
+  outline: 0;
 }
 
 .ButtonComponent:hover {
@@ -45,18 +46,49 @@ body, button, input {
   padding: 15px;
 }
 
-.TicketPreviewComponent:hover {
-  background-color: #fefbed;
-  cursor: pointer;
+  .TicketPreviewComponent:hover {
+    background-color: #fefbed;
+    cursor: pointer;
+  }
+
+  .TicketPreviewComponent-title {
+    font-size: 18px;
+  }
+
+  .TicketPreviewComponent-description {
+    color: #666;
+  }
+
+.EditableComponent {
+  border: 1px solid #DDD;
+  padding: 6px;
+  border-radius: 4px;
+  outline: 0;
+}
+  .EditableComponent:focus {
+    border-color: #999;
+  }
+
+  .EditableComponent.placeholder {
+    color: #999;
+  }
+
+.TicketEditComponent {
 }
 
-.TicketPreviewComponent .title {
-  font-size: 18px;
-}
+  .TicketEditComponent-title {
+    font-size: 18px;
+  }
 
-.TicketPreviewComponent .description {
-  color: #666;
-}
+  .TicketEditComponent-description {
+    margin-top: 20px;
+    min-height: 100px;
+  }
+
+  .TicketEditComponent-saveButton {
+    margin-top: 20px;
+    align-self: center;
+  }
 
 .TicketComponent {
   margin: 25px 0;

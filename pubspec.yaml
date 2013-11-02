@@ -1,4 +1,6 @@
 name: lunapark
 dependencies:
+  http_server: any
+  json: any
   mongo_dart: any
   route: any

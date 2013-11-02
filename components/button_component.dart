@@ -2,10 +2,10 @@ part of components;
 
 class ButtonComponent extends Component {
   String tag = 'button';
-  Function onClick;
+  Function onClick = () => false;
 
-  ButtonComponent() {
-    label = 'Сохранить';
+  ButtonComponent({String name, String label}) : super(name: name) {
+    this.label = label;
     element.onClick.listen((e) {
       onClick();
     });

@@ -5,6 +5,11 @@ class Ticket {
   String description;
   String status;
 
+  static const OPEN = 'open';
+  static const IN_PROGRESS = 'in_progress';
+  static const DONE = 'done';
+
+
   Ticket([Map data]) {
     if (data != null) {
       title = data['title'];
@@ -20,4 +25,6 @@ class Ticket {
       'status': status
     };
   }
+
+  toJson() => serialize();
 }
