@@ -13,7 +13,7 @@ body, button, input {
 }
 
 .HeaderComponent {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .ActionsComponent {
@@ -100,6 +100,7 @@ body, button, input {
 
 .TicketDescriptionComponent {
   color: #666;
+  padding-bottom: 20px; 
 }
 
 .StatusComponent {

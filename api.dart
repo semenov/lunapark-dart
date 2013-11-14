@@ -22,6 +22,25 @@ Future getTicketList() {
   });
 }
 
+Future getTicket(String ticketId) {
+  return _call('tickets/get', {'id': ticketId}).then((result) {
+    var ticket = new Ticket(result['ticket']);
+    return ticket;
+  });
+}
+
+Future setTicketStatus(String ticketId, String status) {
+  return _call('tickets/setStatus', {'id': ticketId, 'status': status});
+}
+
+Future deleteTicket(String ticketId) {
+  return _call('tickets/delete', {'id': ticketId});
+}
+
 Future createTicket(Ticket ticket) {
   return _call('tickets/create', ticket.serialize());
+}
+
+Future updateTicket(Ticket ticket) {
+  return _call('tickets/update', ticket.serialize());
 }

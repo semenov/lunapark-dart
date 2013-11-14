@@ -13,6 +13,12 @@ void _processUrl(String url) {
     mainAction();
   } else if (url == '/tickets/new') {
     newTicket();
+  } else if (url.startsWith('/ticket/')) {
+    var id = url.split('/').last;
+    showTicket(id);
+  } else if (url.startsWith('/tickets/edit/')) {
+    var id = url.split('/').last;
+    editTicket(id);
   }
 }
 
@@ -44,12 +50,21 @@ void showTicketsList() {
   });
 }
 
-void showTicket(Ticket ticket) {
-  _setUrl('/ticket');
-  page.surface.contentComponent = new TicketComponent(ticket);
+void showTicket(String ticketId) {
+  _setUrl('/ticket/' + ticketId);
+  api.getTicket(ticketId).then((ticket) {
+    page.surface.contentComponent = new TicketComponent(ticket);
+  });
 }
 
 void newTicket() {
   _setUrl('/tickets/new');
   page.surface.contentComponent = new TicketEditComponent();
+}
+
+void editTicket(String ticketId) {
+  _setUrl('/tickets/edit/' + ticketId);
+  api.getTicket(ticketId).then((ticket) {
+    page.surface.contentComponent = new TicketEditComponent(ticket);
+  });
 }

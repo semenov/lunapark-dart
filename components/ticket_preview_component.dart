@@ -25,7 +25,7 @@ class TicketPreviewComponent extends BoxComponent {
 
 
     element.onClick.listen((e) {
-      actions.showTicket(ticket);
+      actions.showTicket(ticket.id);
     });
   }
 }
