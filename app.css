@@ -57,6 +57,9 @@ body, button, input {
 
   .TicketPreviewComponent-description {
     color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 .EditableComponent {
@@ -107,4 +110,5 @@ body, button, input {
   width: 24px;
   height: 24px;
   margin: 3px 16px 0 0;
+  flex: none;
 }
